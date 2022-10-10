@@ -8,12 +8,12 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 
-const user = {
-  name: "Ron J",
-  email: "rj@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+// const user = {
+//   name: "Ron J",
+//   email: "rj@example.com",
+//   imageUrl:
+//     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+// };
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Workouts", href: "/workouts", current: false },
@@ -293,13 +293,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <main className="min-h-full">
           <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
             {children}
-            {/* Replace with your content */}
-            <div className="px-4 py-6 sm:px-0">
-              REPLACE
-              <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
-              THIS
-            </div>
-            {/* /End replace */}
           </div>
         </main>
       </div>
