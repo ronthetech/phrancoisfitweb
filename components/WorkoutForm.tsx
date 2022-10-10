@@ -1,4 +1,7 @@
+import { useSession } from "next-auth/react";
+
 export default function WorkoutForm() {
+  const { data: session, status } = useSession();
   return (
     <>
       {/* <div className="border-fuchsia-700 border">
@@ -152,9 +155,9 @@ export default function WorkoutForm() {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">
+              <h2 className="text-lg font-medium leading-6 text-gray-900">
                 Workout Details
-              </h3>
+              </h2>
               <p className="mt-1 text-base text-gray-600">
                 Input the specific details for the workout you want to add.
               </p>
@@ -233,12 +236,22 @@ export default function WorkoutForm() {
                   </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                  <button
-                    type="submit"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Save
-                  </button>
+                  {session ? (
+                    <button
+                      type="submit"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                      Save
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
+                      disabled
+                    >
+                      Save
+                    </button>
+                  )}
                 </div>
               </div>
             </form>
