@@ -42,22 +42,13 @@ const WorkoutDetails = ({
         {/* <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p> */}
         {/* <button onClick={handleClick}>Delete</button> */}
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-          {session ? (
-            <button
-              type="button"
-              className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Delete
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="inline-flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-base font-medium shadow-sm focus:ring-2  sm:ml-3 sm:w-auto sm:text-sm disabled:bg-gray-400 disabled:text-gray-300"
-              disabled
-            >
-              Delete
-            </button>
-          )}
+          <button
+            disabled={!session}
+            type="button"
+            className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm disabled:bg-gray-400 disabled:text-gray-300"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
