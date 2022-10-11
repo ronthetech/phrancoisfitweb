@@ -8,7 +8,7 @@ interface Workout {
 }
 
 export default async function assetHandler(req, res) {
-  const { method } = req;
+  const { method, body } = req;
 
   switch (method) {
     case "GET":
@@ -24,13 +24,13 @@ export default async function assetHandler(req, res) {
       try {
         const newWorkout = await prisma.workout.create({
           data: {
-            id: req.body.id,
-            title: req.body.title,
-            reps: req.body.reps,
-            load: req.body.load,
-            minutes: req.body.minutes,
-            createdAt: req.body.createdAt,
-            updatedAt: req.body.updatedAt,
+            id: body.id,
+            title: body.title,
+            reps: body.reps,
+            load: body.load,
+            minutes: body.minutes,
+            createdAt: body.createdAt,
+            updatedAt: body.updatedAt,
           },
         });
         return res.status(200).json(newWorkout, { success: true });
