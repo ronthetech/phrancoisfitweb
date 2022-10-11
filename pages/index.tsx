@@ -10,9 +10,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
-        <h1>Phrancois Fit</h1>
-      </main>
+      <h1>Phrancois Fit</h1>
 
       <footer className="">
         <a href="" target="_blank" rel="noopener noreferrer"></a>
