@@ -1,7 +1,45 @@
 import { useSession } from "next-auth/react";
+import { SyntheticEvent, useState } from "react";
 
 export default function WorkoutForm() {
   const { data: session, status } = useSession();
+
+  const [title, setTitle] = useState("");
+  const [reps, setReps] = useState(0);
+  const [load, setLoad] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+
+  const handleSubmit = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    const body = { title, reps, load, minutes };
+    console.log(body);
+    try {
+      const response = await fetch("/api/workouts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (response.status !== 200) {
+        console.log("something went wrong");
+        //set an error banner here
+      } else {
+        resetForm();
+        console.log("form submitted successfully !!!");
+        //set a success banner here
+      }
+      //check response, if success is false, don't take them to success page
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const resetForm = () => {
+    setTitle("");
+    setReps(0);
+    setLoad(0);
+    setMinutes(0);
+  };
+
   return (
     <>
       {/* <div className="border-fuchsia-700 border">
@@ -164,7 +202,7 @@ export default function WorkoutForm() {
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
-            <form action="#" method="POST">
+            <form onSubmit={handleSubmit}>
               <div className="overflow-hidden shadow sm:rounded-md">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6 px-10 mx-2">
@@ -181,6 +219,8 @@ export default function WorkoutForm() {
                         id="workout-title"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         minLength={3}
+                        onChange={(e) => setTitle(e.target.value)}
+                        value={title}
                         required
                       />
                     </div>
@@ -197,7 +237,9 @@ export default function WorkoutForm() {
                         name="workout-reps"
                         id="workout-reps"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                        min={0}
+                        min={1}
+                        onChange={(e) => setReps(parseInt(e.target.value))}
+                        value={reps}
                       />
                     </div>
 
@@ -214,6 +256,8 @@ export default function WorkoutForm() {
                         id="workout-load"
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         min={0}
+                        onChange={(e) => setLoad(parseInt(e.target.value))}
+                        value={load}
                       />
                     </div>
 
@@ -231,27 +275,25 @@ export default function WorkoutForm() {
                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                         min={0}
                         max={60}
+                        onChange={(e) => setMinutes(parseInt(e.target.value))}
+                        value={minutes}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                  {session ? (
-                    <button
-                      type="submit"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                      Save
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
-                      disabled
-                    >
-                      Save
-                    </button>
-                  )}
+                  <button
+                    disabled={
+                      !session ||
+                      !title ||
+                      (reps && !load && !minutes) ||
+                      (!reps && !minutes)
+                    }
+                    type="submit"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
+                  >
+                    Save
+                  </button>
                 </div>
               </div>
             </form>
