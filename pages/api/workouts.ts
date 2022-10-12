@@ -1,13 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "lib/prisma";
 
-interface Workout {
-  title: string;
-  reps: number | "";
-  load: number | "";
-  minutes: number | "";
-}
-
-export default async function assetHandler(req, res) {
+export default async function assetHandler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { method, body } = req;
 
   switch (method) {
@@ -33,7 +30,7 @@ export default async function assetHandler(req, res) {
             updatedAt: body.updatedAt,
           },
         });
-        return res.status(200).json(newWorkout, { success: true });
+        return res.status(200).json({ newWorkout, success: true });
       } catch (e) {
         console.error("Request error", e);
         res
