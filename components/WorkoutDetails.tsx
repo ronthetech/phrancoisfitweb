@@ -13,7 +13,7 @@ const WorkoutDetails = ({
   load,
   minutes,
 }: WorkoutDetailsProps) => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   return (
     <div className="bg-gray-300 rounded-lg text-left shadow-lg transition-all sm:my-8 my-6 sm:w-full sm:max-w-xl p-6 mx-auto">
       <div>
@@ -40,7 +40,6 @@ const WorkoutDetails = ({
           )}
         </div>
         {/* <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p> */}
-        {/* <button onClick={handleClick}>Delete</button> */}
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
             disabled={!session}
