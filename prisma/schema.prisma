@@ -15,7 +15,7 @@ generator client {
 model Workout {
 id        Int       @default(autoincrement()) @id
 title     String    
-reps      Int
+reps      Int?
 load      Int?      
 minutes   Int?      
 createdAt DateTime  @default(now())
