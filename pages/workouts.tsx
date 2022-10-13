@@ -23,7 +23,7 @@ const Workouts: NextPage = ({ workouts }: any) => {
       <div>
         {workouts.map((workout: any) => (
           <WorkoutDetails
-            key={workout.title}
+            key={workout.id}
             title={workout.title}
             reps={workout.reps}
             load={workout.load}
