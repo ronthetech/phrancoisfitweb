@@ -28,6 +28,7 @@ const Workouts: NextPage = ({ workouts }: any) => {
             reps={workout.reps}
             load={workout.load}
             minutes={workout.minutes}
+            createdAt={workout.createdAt}
           />
         ))}
       </div>

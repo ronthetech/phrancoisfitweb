@@ -1,3 +1,4 @@
+import { formatDistanceToNow } from "date-fns";
 import { useSession } from "next-auth/react";
 
 interface WorkoutDetailsProps {
@@ -5,6 +6,7 @@ interface WorkoutDetailsProps {
   reps: number | "";
   load: number | "";
   minutes: number | "";
+  createdAt: Date;
 }
 
 const WorkoutDetails = ({
@@ -12,6 +14,7 @@ const WorkoutDetails = ({
   reps,
   load,
   minutes,
+  createdAt,
 }: WorkoutDetailsProps) => {
   const { data: session } = useSession();
   return (
@@ -39,7 +42,9 @@ const WorkoutDetails = ({
             <p></p>
           )}
         </div>
-        {/* <p>{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p> */}
+        <p className="mt-1 text-lg text-gray-600">
+          {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
+        </p>
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
             disabled={!session}
