@@ -1,14 +1,16 @@
 import WorkoutDetails from "components/WorkoutDetails";
+import prisma from "lib/prisma";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-const workouts = [
-  { title: "Pushups", reps: 20, load: 0, minutes: 0 },
-  { title: "Bench Press", reps: 20, load: 40, minutes: 0 },
-  { title: "Running", reps: 0, load: 0, minutes: 20 },
-];
+// const workouts = [
+//   { title: "Pushups", reps: 20, load: 0, minutes: 0 },
+//   { title: "Bench Press", reps: 20, load: 40, minutes: 0 },
+//   { title: "Running", reps: 0, load: 0, minutes: 20 },
+// ];
 
-const Workouts: NextPage = () => {
+const Workouts: NextPage = ({ workouts }: any) => {
+  //console.log(typeof workouts);
   return (
     <div className="">
       <Head>
@@ -19,7 +21,7 @@ const Workouts: NextPage = () => {
 
       <h1>Workouts</h1>
       <div>
-        {workouts.map((workout) => (
+        {workouts.map((workout: any) => (
           <WorkoutDetails
             key={workout.title}
             title={workout.title}
@@ -34,3 +36,17 @@ const Workouts: NextPage = () => {
 };
 
 export default Workouts;
+
+export const getServerSideProps = async () => {
+  const workouts = await prisma.workout.findMany();
+
+  return { props: { workouts: JSON.parse(JSON.stringify(workouts)) } };
+};
+
+// const ({workouts}) =>
+//   <ul>
+//    {posts.map(post => (
+//      <li key={post.id}>{post.title}</li>
+//     ))}
+//   </ul>
+// );
