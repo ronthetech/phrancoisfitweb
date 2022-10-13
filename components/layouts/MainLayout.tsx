@@ -1,6 +1,11 @@
 import { Fragment, ReactNode } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  BellIcon,
+  UserIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
 import { signIn, signOut, useSession } from "next-auth/react";
 
@@ -8,12 +13,6 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 
-// const user = {
-//   name: "Ron J",
-//   email: "rj@example.com",
-//   imageUrl:
-//     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-// };
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Workouts", href: "/workouts", current: false },
@@ -45,11 +44,13 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 <div className="flex h-16 items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <img
+                      {/* <Image
                         className="h-8 w-8"
                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Phrancois Fit"
-                      />
+                        height={32}
+                        width={32}
+                      /> */}
                     </div>
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
@@ -90,11 +91,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                           <div>
                             <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                               <span className="sr-only">Open user menu</span>
-                              <img
+                              <UserIcon className="h-8 w-8 rounded-full" />
+                              {/* <Image
                                 className="h-8 w-8 rounded-full"
-                                src={session?.user?.image}
-                                alt={session?.user?.name}
-                              />
+                                src={user.image!}
+                                alt={user.name!}
+                                height={32}
+                                width={32}
+                              /> */}
                             </Menu.Button>
                           </div>
                           <Transition
@@ -192,11 +196,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   <div className="border-t border-gray-700 pt-4 pb-3">
                     <div className="flex items-center px-5">
                       <div className="flex-shrink-0">
-                        <img
+                        <UserIcon className="h-8 w-8 rounded-full" />
+                        {/* <Image
                           className="h-10 w-10 rounded-full"
-                          src={session?.user?.image}
-                          alt={session?.user?.name}
-                        />
+                          src={user.image!}
+                          alt={user.name!}
+                          height={32}
+                          width={32}
+                        /> */}
                       </div>
                       <div className="ml-3">
                         <div className="text-base font-medium leading-none text-white">
