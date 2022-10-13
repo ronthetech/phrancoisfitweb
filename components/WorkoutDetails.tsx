@@ -42,7 +42,7 @@ const WorkoutDetails = ({
             <p></p>
           )}
         </div>
-        <p className="mt-1 text-lg text-gray-600">
+        <p className="mt-1 text-lg text-gray-700 font-bold">
           {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
         </p>
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
