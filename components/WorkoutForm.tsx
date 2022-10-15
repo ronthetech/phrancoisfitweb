@@ -9,7 +9,7 @@ export default function WorkoutForm() {
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     const body = { title, reps, load, minutes };
-    console.log(body);
+    //console.log(body);
     try {
       const response = await fetch("/api/workouts", {
         method: "POST",
