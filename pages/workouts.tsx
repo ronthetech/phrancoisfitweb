@@ -1,9 +1,13 @@
 import WorkoutDetails from "components/WorkoutDetails";
 import prisma from "lib/prisma";
-import type { InferGetServerSidePropsType, NextPage } from "next";
+import type {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const workouts = await prisma.workout.findMany();
 
   return { props: { workouts: JSON.parse(JSON.stringify(workouts)) } };
@@ -33,6 +37,7 @@ export default function Workouts(
           }) => (
             <WorkoutDetails
               key={workout.id}
+              id={workout.id}
               title={workout.title}
               reps={workout.reps}
               load={workout.load}
