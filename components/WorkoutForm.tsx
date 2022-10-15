@@ -1,9 +1,6 @@
-import { useSession } from "next-auth/react";
 import { SyntheticEvent, useState } from "react";
 
 export default function WorkoutForm() {
-  const { data: session, status } = useSession();
-
   const [title, setTitle] = useState("");
   const [reps, setReps] = useState(0);
   const [load, setLoad] = useState(0);
@@ -283,7 +280,7 @@ export default function WorkoutForm() {
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button
-                    disabled={!session || !title || (!reps && !minutes)}
+                    disabled={!title || (!reps && !minutes)}
                     type="submit"
                     className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
                   >
