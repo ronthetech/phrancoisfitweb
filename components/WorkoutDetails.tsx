@@ -5,9 +5,9 @@ import { SyntheticEvent } from "react";
 interface WorkoutDetailsProps {
   id: number;
   title: string;
-  reps: number | "";
-  load: number | "";
-  minutes: number | "";
+  reps: number;
+  load: number;
+  minutes: number;
   createdAt: Date;
 }
 
