@@ -16,7 +16,7 @@ export default function Footer() {
       /> */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between text-gray-300">
-          <h1 className="text-3xl font-bold">Phrancois Fit</h1>
+          <h1 className="text-xl lg:text-3xl font-bold">Phrancois Fit</h1>
           <a href="https://storyset.com/data">Data illustrations by Storyset</a>
         </div>
       </div>
