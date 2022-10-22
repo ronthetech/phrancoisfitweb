@@ -7,6 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
+import Footer from "components/Footer";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -229,6 +230,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             {children}
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );
