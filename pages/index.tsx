@@ -6,7 +6,7 @@ import fitness_tracker_bro from "public/fitness_tracker_bro.svg";
 
 const Home: NextPage = () => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Phrancois Fit</title>
         <meta name="description" content="Phrancois Fit web app" />
@@ -33,9 +33,6 @@ const Home: NextPage = () => {
           height: "auto",
         }}
       />
-      <footer className="">
-        <a href="" target="_blank" rel="noopener noreferrer"></a>
-      </footer>
     </div>
   );
 };
