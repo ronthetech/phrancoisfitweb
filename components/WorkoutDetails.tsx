@@ -45,7 +45,7 @@ const WorkoutDetails = ({
   };
 
   return (
-    <div className="bg-gray-300 rounded-lg text-left shadow-lg transition-all sm:my-8 my-6 sm:w-full sm:max-w-xl p-6 mx-auto">
+    <div className="bg-indigo-200 rounded-lg text-left shadow-lg transition-all sm:my-8 my-6 sm:w-full sm:max-w-xl p-6 mx-auto">
       <div>
         <h2 className="text-xl font-medium leading-6 text-gray-900">{title}</h2>
       </div>
