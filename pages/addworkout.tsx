@@ -15,7 +15,7 @@ const AddWorkout: NextPage = () => {
       </Head>
 
       <>
-        <h1>Add a New Workout</h1>
+        <h1 className="text-xl font-bold">Add a New Workout</h1>
         <WorkoutForm />
       </>
     </div>

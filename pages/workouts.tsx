@@ -24,7 +24,7 @@ export default function Workouts(
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Workouts</h1>
+      <h1 className="text-xl font-bold">Workouts</h1>
       <div>
         {props.workouts.map(
           (workout: {
