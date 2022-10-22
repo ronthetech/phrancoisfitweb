@@ -4,7 +4,7 @@ import Head from "next/head";
 
 const AddWorkout: NextPage = () => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Phrancois Fit | Add a Workout</title>
         <meta
