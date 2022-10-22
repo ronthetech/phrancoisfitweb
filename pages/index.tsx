@@ -13,7 +13,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Phrancois Fit</h1>
       {/* <Image
         alt="Vercel logo"
         src={bg_gym}
