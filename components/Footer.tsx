@@ -3,7 +3,7 @@ import fitness_tracker_bro from "public/fitness_tracker_bro.svg";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800">
+    <footer className="bg-gray-800 fixed bottom-0 w-full">
       {/* <Image
         alt="Fitness Tracker Bro"
         src={fitness_tracker_bro}
