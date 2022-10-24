@@ -14,10 +14,10 @@ const AddWorkout: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <>
-        <h1 className="text-xl font-bold">Add a New Workout</h1>
+      <h1 className="text-xl font-bold">Add a New Workout</h1>
+      <div>
         <WorkoutForm />
-      </>
+      </div>
     </div>
   );
 };
