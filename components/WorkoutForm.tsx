@@ -194,13 +194,13 @@ export default function WorkoutForm() {
                 Workout Details
               </h2>
               <p className="mt-1 text-base text-gray-600">
-                Input the specific details for the workout you want to add.
+                Input the details for the workout you want to add.
               </p>
             </div>
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
             <form onSubmit={handleSubmit}>
-              <div className="overflow-hidden shadow sm:rounded-md">
+              <div className="overflow-hidden shadow sm:rounded-md mb-12 sm:mb-0">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6 px-10 mx-2">
                     <div className="col-span-4">
