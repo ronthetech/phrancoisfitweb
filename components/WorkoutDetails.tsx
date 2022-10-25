@@ -52,24 +52,24 @@ const WorkoutDetails = ({
       <div>
         <div>
           {reps ? (
-            <p className="mt-1 text-lg text-gray-600">
+            <p className="mt-1 text-lg text-gray-800">
               <strong>Reps: {reps}</strong>
             </p>
           ) : (
             <p></p>
           )}
-          <p className="mt-1 text-lg text-gray-600">
+          <p className="mt-1 text-lg text-gray-800">
             <strong>Load (lbs): {load}</strong>
           </p>
           {minutes ? (
-            <p className="mt-1 text-lg text-gray-600">
+            <p className="mt-1 text-lg text-gray-800">
               <strong>Length (mins): {minutes}</strong>
             </p>
           ) : (
             <p></p>
           )}
         </div>
-        <p className="mt-1 text-lg text-gray-700 font-bold">
+        <p className="mt-1 text-lg text-gray-800 font-bold">
           {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
         </p>
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
