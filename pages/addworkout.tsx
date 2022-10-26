@@ -4,9 +4,9 @@ import Head from "next/head";
 
 const AddWorkout: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>Phrancois Fit | Add a Workout</title>
+        <title>Phrancois Fit | Add Workout</title>
         <meta
           name="description"
           content="Phrancois Fit web add a new workout"
@@ -18,7 +18,7 @@ const AddWorkout: NextPage = () => {
       <div>
         <WorkoutForm />
       </div>
-    </div>
+    </>
   );
 };
 
