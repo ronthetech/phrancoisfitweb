@@ -249,7 +249,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
           </div>
         </header>
         <main className="min-h-full">
-          <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl py-6 px-3 sm:px-6 lg:px-8">
             {children}
           </div>
         </main>
