@@ -17,7 +17,7 @@ export default function Workouts(
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
   return (
-    <div>
+    <>
       <Head>
         <title>Phrancois Fit</title>
         <meta name="description" content="Phrancois Fit web app" />
@@ -47,6 +47,6 @@ export default function Workouts(
           )
         )}
       </div>
-    </div>
+    </>
   );
 }
