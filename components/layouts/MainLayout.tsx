@@ -35,6 +35,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <>
+      {isLoading && <p>Loading login info...</p>}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -85,7 +86,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                       </button>
 
                       {/* Profile dropdown */}
-                      {user ? (
+                      {!isLoading && user ? (
                         <Menu as="div" className="relative ml-3">
                           <div>
                             <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -183,7 +184,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   ))}
                 </div>
 
-                {user ? (
+                {!isLoading && user ? (
                   <div className="border-t border-gray-700 pt-4 pb-3">
                     <div className="flex items-center px-5">
                       <div className="flex-shrink-0">
