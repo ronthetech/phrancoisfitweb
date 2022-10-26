@@ -133,7 +133,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     ) : (
                       // eslint-disable-next-line @next/next/no-html-link-for-pages
                       <a
-                        className="text-gray-300 text:bg-gray-500"
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                         href="/api/auth/login"
                       >
                         Login
