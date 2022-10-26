@@ -1,3 +1,4 @@
+import { useUser } from "@auth0/nextjs-auth0";
 import { formatDistanceToNow } from "date-fns";
 import { useRouter } from "next/router";
 import { SyntheticEvent } from "react";
@@ -19,6 +20,7 @@ const WorkoutDetails = ({
   minutes,
   createdAt,
 }: WorkoutDetailsProps) => {
+  const { user, isLoading } = useUser();
   const router = useRouter();
 
   const handleClick = async (e: SyntheticEvent) => {
@@ -36,7 +38,7 @@ const WorkoutDetails = ({
         //set an error banner here
       } else {
         router.reload();
-        console.log("workout deleted successfully !!!");
+        console.log("workout deleted successfully!");
         //set a success banner here
       }
     } catch (error) {
@@ -74,6 +76,7 @@ const WorkoutDetails = ({
         </p>
         <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
           <button
+            disabled={!user}
             type="button"
             className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm disabled:bg-gray-400 disabled:text-gray-300"
             onClick={handleClick}
