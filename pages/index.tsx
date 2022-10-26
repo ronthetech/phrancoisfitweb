@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import bg_gym from "public/bg_gym.jpg";
 import fitness_tracker_bro from "public/fitness_tracker_bro.svg";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Phrancois Fit</title>
         <meta name="description" content="Phrancois Fit web app" />
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
           height: "auto",
         }}
       />
-    </div>
+    </>
   );
 };
 
