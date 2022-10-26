@@ -17,3 +17,5 @@ You can plan out your workouts by saving individual exercises. Features a remind
 ## Auth
 
 Users can login with Google credentials or sign up for an account.
+
+![Phrancois Fit Logged In](https://i.ibb.co/tmpXc17/Phrancois-Fit-Home-Logged-In-Menu-Open-110.png)
