@@ -1,10 +1,6 @@
 import WorkoutDetails from "components/WorkoutDetails";
 import prisma from "lib/prisma";
-import type {
-  GetServerSideProps,
-  InferGetServerSidePropsType,
-  NextPage,
-} from "next";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 
 export const getServerSideProps: GetServerSideProps = async () => {
