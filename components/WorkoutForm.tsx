@@ -21,7 +21,7 @@ export default function WorkoutForm() {
         //set an error banner here
       } else {
         resetForm();
-        console.log("form submitted successfully !!!");
+        console.log("form submitted successfully!");
         //set a success banner here
       }
       //check response, if success is false, don't take them to success page
@@ -72,7 +72,7 @@ export default function WorkoutForm() {
                           type="text"
                           name="company-website"
                           id="company-website"
-                          className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                           placeholder="www.example.com"
                         />
                       </div>
@@ -91,7 +91,7 @@ export default function WorkoutForm() {
                         id="about"
                         name="about"
                         rows={3}
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                         placeholder="you@example.com"
                         defaultValue={""}
                       />
@@ -117,7 +117,7 @@ export default function WorkoutForm() {
                       </span>
                       <button
                         type="button"
-                        className="ml-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        className="ml-5 rounded-md border border-gray-300 bg-white py-2 px-3 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2"
                       >
                         Change
                       </button>
@@ -147,7 +147,7 @@ export default function WorkoutForm() {
                         <div className="flex text-sm text-gray-600">
                           <label
                             htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
+                            className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-amber-600 focus-within:ring-offset-2 hover:text-amber-600"
                           >
                             <span>Upload a file</span>
                             <input
@@ -169,7 +169,7 @@ export default function WorkoutForm() {
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button
                     type="submit"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2"
                   >
                     Save
                   </button>
@@ -214,7 +214,7 @@ export default function WorkoutForm() {
                         type="text"
                         name="workout-title"
                         id="workout-title"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                         minLength={3}
                         onChange={(e) => setTitle(e.target.value)}
                         value={title}
@@ -233,7 +233,7 @@ export default function WorkoutForm() {
                         type="number"
                         name="workout-reps"
                         id="workout-reps"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                         min={0}
                         onChange={(e) => setReps(parseInt(e.target.value))}
                         value={reps}
@@ -251,7 +251,7 @@ export default function WorkoutForm() {
                         type="number"
                         name="workout-load"
                         id="workout-load"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                         min={0}
                         onChange={(e) => setLoad(parseInt(e.target.value))}
                         value={load}
@@ -269,7 +269,7 @@ export default function WorkoutForm() {
                         type="number"
                         name="workout-minutes"
                         id="workout-minutes"
-                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-amber-600 focus:ring-amber-600 sm:text-sm"
                         min={0}
                         max={60}
                         onChange={(e) => setMinutes(parseInt(e.target.value))}
@@ -282,7 +282,7 @@ export default function WorkoutForm() {
                   <button
                     disabled={!title || (!reps && !minutes)}
                     type="submit"
-                    className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:text-gray-300"
                   >
                     Save
                   </button>
