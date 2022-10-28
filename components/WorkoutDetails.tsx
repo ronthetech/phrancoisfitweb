@@ -58,9 +58,13 @@ const WorkoutDetails = ({
       ) : (
         <p></p>
       )}
-      <p className="mt-1 text-lg text-gray-800">
-        <strong>Load (lbs): {load}</strong>
-      </p>
+      {load ? (
+        <p className="mt-1 text-lg text-gray-800">
+          <strong>Load (lbs): {load}</strong>
+        </p>
+      ) : (
+        <p></p>
+      )}
       {minutes ? (
         <p className="mt-1 text-lg text-gray-800">
           <strong>Length (mins): {minutes}</strong>
