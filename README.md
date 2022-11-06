@@ -1,6 +1,6 @@
-# Phrancois Fit Web App
+# [Phrancois Fit Web App]
 
-[Phrancois Fit](https://phrancoisfit.vercel.app/)
+## [Phrancois Fit](https://phrancoisfit.vercel.app/)
 
 ![Phrancois Fit](https://ronthetech.github.io/image-repo/home_page_logged_out.png)
 
