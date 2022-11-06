@@ -1,4 +1,4 @@
-# [Phrancois Fit Web App]
+# Phrancois Fit Web App
 
 ## [Phrancois Fit](https://phrancoisfit.vercel.app/)
 
