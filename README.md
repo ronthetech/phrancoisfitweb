@@ -10,7 +10,7 @@ Displays a list of custom created workouts, with details like the number of reps
 
 ![Phrancois Fit Workouts Page](https://ronthetech.github.io/image-repo/workouts_page_logged_out.png)
 
-You can plan out your workouts by saving individual exercises. Features a reminder for how long ago the particular exercise was created and button to delete the exercise after you have completed it.
+You can plan out your workouts by saving individual exercises. Features a reminder for how long ago the particular exercise was created and the option to delete the exercise after you have completed it.
 
 ![Phrancois Fit Add Workout Form](https://ronthetech.github.io/image-repo/adding_workout_logged_out.png)
 
