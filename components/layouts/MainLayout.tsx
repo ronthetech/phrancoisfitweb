@@ -4,6 +4,7 @@ import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/router";
 import Footer from "components/Footer";
 import { useUser } from "@auth0/nextjs-auth0";
+import Image from "next/image";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -77,14 +78,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                           <div>
                             <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                               <span className="sr-only">Open user menu</span>
-                              <UserIcon className="h-8 w-8 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" />
-                              {/* <Image
+                              {/* <UserIcon className="h-8 w-8 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" /> */}
+                              <Image
                                 className="h-8 w-8 rounded-full"
-                                src={user.image!}
+                                src={user.picture!}
                                 alt={user.name!}
                                 height={32}
                                 width={32}
-                              /> */}
+                              />
                             </Menu.Button>
                           </div>
                           <Transition
@@ -170,14 +171,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   <div className="border-t border-gray-700 pt-4 pb-3">
                     <div className="flex items-center px-5">
                       <div className="flex-shrink-0">
-                        <UserIcon className="h-8 w-8 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" />
-                        {/* <Image
+                        {/* <UserIcon className="h-8 w-8 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" /> */}
+                        <Image
                           className="h-10 w-10 rounded-full"
-                          src={user.image!}
+                          src={user.picture!}
                           alt={user.name!}
                           height={32}
                           width={32}
-                        /> */}
+                        />
                       </div>
 
                       {/* <div className="ml-3">
