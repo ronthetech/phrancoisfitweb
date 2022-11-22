@@ -25,6 +25,7 @@ const Home: NextPage = () => {
       <Image
         alt="Fitness Tracker Bro"
         src={fitness_tracker_bro}
+        priority={true}
         width={1000}
         height={1000}
         style={{
