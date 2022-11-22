@@ -1,5 +1,4 @@
 import { useUser } from "@auth0/nextjs-auth0";
-import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -21,13 +20,12 @@ export default function Profile() {
         </Head>
 
         <h1 className="text-xl font-bold">Profile</h1>
-        <div>
+        <div className="bg-indigo-200 rounded-lg text-center shadow-lg transition-all sm:my-8 my-6 sm:w-full sm:max-w-xl p-6 mx-auto">
           <Image
             src={user.picture!}
             alt={user.name!}
             height={100}
             width={100}
-            style={{ height: 10, width: 10 }}
           />
           <h1 className="text-lg text-indigo-900">{user?.name}</h1>
           <p className="text-base text-indigo-800">{user?.email}</p>
