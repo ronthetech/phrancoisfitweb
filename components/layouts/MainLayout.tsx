@@ -67,8 +67,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                             )}
                             aria-current={
                               router.pathname == item.href ? "page" : undefined
-                            }
-                          >
+                            }>
                             {item.name}
                           </a>
                         ))}
@@ -80,10 +79,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
                       <div className="ml-4 flex items-center md:ml-6">
                         <button
                           type="button"
-                          className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                        >
+                          className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="sr-only">View notifications</span>
-                          <BellIcon className="h-6 w-6" aria-hidden="true" />
+                          {/* <BellIcon className="h-6 w-6" aria-hidden="true" /> */}
                         </button>
 
                         {/* Profile dropdown */}
@@ -108,8 +106,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                             enterTo="transform opacity-100 scale-100"
                             leave="transition ease-in duration-75"
                             leaveFrom="transform opacity-100 scale-100"
-                            leaveTo="transform opacity-0 scale-95"
-                          >
+                            leaveTo="transform opacity-0 scale-95">
                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                               {userNavigation.map((item) => (
                                 <Menu.Item key={item.name}>
@@ -119,8 +116,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                                       className={classNames(
                                         active ? "bg-gray-100" : "",
                                         "block px-4 py-2 text-sm text-gray-700"
-                                      )}
-                                    >
+                                      )}>
                                       {item.name}
                                     </a>
                                   )}
@@ -134,8 +130,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                       // eslint-disable-next-line @next/next/no-html-link-for-pages
                       <a
                         className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                        href="/api/auth/login"
-                      >
+                        href="/api/auth/login">
                         Login
                       </a>
                     )}
@@ -177,8 +172,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                       )}
                       aria-current={
                         router.pathname == item.href ? "page" : undefined
-                      }
-                    >
+                      }>
                       {item.name}
                     </Disclosure.Button>
                   ))}
@@ -208,8 +202,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     </div> */}
                       <button
                         type="button"
-                        className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                      >
+                        className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
@@ -221,8 +214,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                           key={item.name}
                           as="a"
                           href={item.href}
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                        >
+                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">
                           {item.name}
                         </Disclosure.Button>
                       ))}
@@ -232,8 +224,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   // eslint-disable-next-line @next/next/no-html-link-for-pages
                   <a
                     className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                    href="/api/auth/login"
-                  >
+                    href="/api/auth/login">
                     Login
                   </a>
                 )}
