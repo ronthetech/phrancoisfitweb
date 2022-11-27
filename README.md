@@ -1,3 +1,7 @@
+<a href="https://www.ronjeanfrancois.com/">
+<img src="https://img.shields.io/badge/created%20by-@ronjtech-FD6A02.svg" alt="Created by Ron Jean-Francois">
+</a>
+
 # Phrancois Fit
 
 **Link to project:** [Phrancois Fit](https://phrancoisfit.vercel.app/)
